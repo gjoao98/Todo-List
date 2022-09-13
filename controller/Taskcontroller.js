@@ -4,7 +4,7 @@ const Task = require("../models/Task");
 const getTasks = async (req, res) => {
     try {
         const tasksList = await Task.find();
-        return res.render("index", { tasksList, task: null });
+        return res.render("index", { tasksList, task: null, taskDelete: null });
     } catch (err) {
         res.status(500).send({ error: err.message });
     }
@@ -27,9 +27,14 @@ const createTask = async (req, res) => {
 
 const getById = async (req, res) => {
     try {
-        const task = await Task.findOne({ _id: req.params.id });
         const tasksList = await Task.find();
-        res.render("index", { task, tasksList });
+        if (req.params.method == "update") {
+            const task = await Task.findOne({ _id: req.params.id });
+            res.render("index", { task, tasksList, taskDelete: null });
+        } else {
+            const taskDelete = await Task.findOne({ _id: req.params.id });
+            res.render("index", { task: null, tasksList, taskDelete });
+        }
     } catch (err) {
         res.status(500).send({ error: err.message });
     }
@@ -45,9 +50,19 @@ const updateTask = async (req, res) => {
     }
 };
 
+const deleteTask = async (req, res) => {
+    try {
+        await Task.deleteOne({ _id: req.params.id });
+        res.redirect("/");
+    } catch (err) {
+        res.status(500).send({ error: err.message });
+    }
+}
+
 module.exports = {
     getTasks,
     createTask,
     getById,
     updateTask,
+    deleteTask
 };
