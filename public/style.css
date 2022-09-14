@@ -4,15 +4,16 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', Arial;
-    /* color: #252870;
-    color: #999CF2;
-    color: #4F54F0;
-    color: #3F4063;
-    color: #4247C9; */
+    /* color: #010852;
+    color: #3645EB;
+    color: #0213D1;
+    color: #3e3e3e;
+    color: #010E9E;
+    color: #252870; */
 }
 
 body {
-    background-color: #343434;
+    background-color: #3e3e3e;
     width: 100%;
     height: 100%;
     color: #FFF;
@@ -22,7 +23,6 @@ header {
     background-color: #252870;
     height: 15vh;
     padding: 3rem 0 4rem 0;
-    margin-bottom: 2rem;
     text-align: center;
 }
 
@@ -36,7 +36,7 @@ input {
     padding: .5rem;
     font-size: 1rem;
     outline: none;
-    background-color: #343434;
+    background-color: #3e3e3e;
     color: #FFF;
 }
 
@@ -45,12 +45,162 @@ button {
     width: 10%;
     padding: .5rem;
     font-size: 1rem;
-    background-color: #33379C;
+    background-color: #010E9E;
     color: #ccc;
     cursor: pointer;
-    transition: 0.2s;
+    transition: all .3s linear;
 }
 
 button:hover{
-    background-color: #4247C9;
+    background-color: #0213D1;
+}
+
+#tasks {
+    margin: 1rem;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    flex-direction: column;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #010E9E;
+}
+
+ul li:hover {
+    background-color: #252870;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+ul li span {
+    color: #CCC;
+    font-style: italic;
+    font-size: .8rem;
+    padding-left: 1rem;
+}
+
+ul li div {
+    display: flex;
+    align-items: center;
+}
+
+a.btnUpdate {
+    color: #CCC;
+    padding: .5rem;
+    transition: all .3s linear;
+}
+
+a.btnUpdate:hover {
+    color: rgb(0, 255, 0);
+}
+
+a.btnDelete {
+    color: #CCC;
+    padding: .5rem;
+    transition: all .3s linear;
+}
+
+a.btnDelete:hover {
+    color: rgb(255, 0, 0);
+}
+
+section#modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: #00000050;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#card {
+    width: 30rem;
+    position: relative;
+    background-color: #3e3e3e;
+}
+
+div#card h2 {
+    padding: 2rem;
+    margin: 0;
+}
+
+div#card #close {
+    float: right;
+    text-decoration: none;
+    color: #FFF;
+    margin: 0.5rem;
+    padding: .2rem .3rem;
+    font-size: 1.2rem;
+    transition: all .3s linear;
+}
+
+div#card #close:hover {
+    color: rgb(255, 0, 0);
+}
+
+div#card hr {
+    width: 78%;
+    margin: 0 auto;
+}
+
+div#card p {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+#card .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 1rem;
+}
+
+#card .btns a {
+    text-decoration: none;
+    background-color: #3e3e3e;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding: .5rem 1rem;
+    transition: all .3s linear;
+}
+
+.btns #btnNot {
+    border: 1px solid rgb(255, 0, 0);
+    color: rgb(255, 0, 0);
+}
+
+.btns #btnNot:hover {
+    background-color: rgb(255, 0, 0);
+    color: #FFF;
+}
+
+.btns #btnYes {
+    border: 1px solid rgb(0, 205, 0);
+    color: rgb(0, 205, 0);
+}
+
+.btns #btnYes:hover {
+    background-color: rgb(0, 205, 0);
+    color: #FFF;
 }
