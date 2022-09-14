@@ -6,5 +6,6 @@ routes.post("/create", TaskController.createTask);
 routes.get("/getById/:id/:method", TaskController.getById);
 routes.post("/update/:id", TaskController.updateTask);
 routes.get("/deleteTask/:id", TaskController.deleteTask);
+routes.get("/checkTask/:id", TaskController.checkTask);
 
 module.exports = routes;

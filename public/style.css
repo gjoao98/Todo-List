@@ -75,7 +75,7 @@ ul li {
     font-size: 1.2rem;
     margin-bottom: 1rem;
     padding: 1rem;
-    background-color: #010E9E;
+    background-color: #010852;
 }
 
 ul li:hover {
@@ -83,8 +83,10 @@ ul li:hover {
 }
 
 ul li a {
+    position: relative;
     text-decoration: none;
     color: #FFF;
+    padding-left: 2rem;
 }
 
 ul li span {
@@ -97,6 +99,35 @@ ul li span {
 ul li div {
     display: flex;
     align-items: center;
+}
+
+ul li.check-true {
+    background-color: rgb(105, 105, 105);
+    color: #FFF;
+    text-decoration: line-through;
+}
+
+ul li a.check-true::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    border: 2px solid #FFF;
+    border-width: 0 2px 2px 0;
+    width: 7px;
+    height: 15px;
+    transform: rotate(45deg);
+}
+
+ul li a.check-false::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    width: 15px;
+    height: 15px;
 }
 
 a.btnUpdate {
