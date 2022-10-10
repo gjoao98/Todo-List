@@ -4,7 +4,7 @@
   "description": "Projeto de Todo List com Node e JavaScript",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node index",
     "dev": "nodemon index"
   },
   "author": "Gabriel João",
