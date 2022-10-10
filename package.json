@@ -16,6 +16,6 @@
     "nodemon": "^2.0.19"
   },
   "devDependencies": {
-    "dotenv": "^16.0.2"
+    "dotenv": "^16.0.3"
   }
 }
